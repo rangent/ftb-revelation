@@ -1,11 +1,12 @@
 FROM java:8-jre
 
 MAINTAINER Brian Esserlieu (https://github.com/rangent)
+# Original 2.2.0 file from Jonas Bonno Mikkelsen (https://github.com/JonasBonno)
 
 # Updating container
 RUN apt-get update && \
 	apt-get upgrade --yes --force-yes && \
-  apt-get install vim -y && \
+	apt-get install -y vim && \
 	apt-get clean && \ 
 	rm -rf /var/lib/apt/lists/* 
 
@@ -18,10 +19,10 @@ USER root
 # Creating user and downloading files
 RUN useradd -m -U minecraft && \
 	mkdir -p /minecraft/world && \
-	wget --no-check-certificate https://www.feed-the-beast.com/projects/ftb-revelation/files/2584443/download && \
+	wget --no-check-certificate https://www.feed-the-beast.com/projects/ftb-revelation/files/2584443/download -O FTBRevelation-2.3.0-1.12.2.zip && \
 	unzip FTBRevelation-2.3.0-1.12.2.zip && \
 	rm FTBRevelation-2.3.0-1.12.2.zip && \
-  wget --no-check-certificate https://www.feed-the-beast.com/projects/ftb-revelation/files/2584447/download && \
+	wget --no-check-certificate https://www.feed-the-beast.com/projects/ftb-revelation/files/2584447/download -O FTBRevelationServer_2.3.0.zip && \
 	unzip FTBRevelationServer_2.3.0.zip && \
 	rm FTBRevelationServer_2.3.0.zip && \
 	chmod u+x FTBInstall.sh ServerStart.sh && \
