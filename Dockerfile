@@ -19,10 +19,10 @@ USER root
 # Creating user and downloading files
 RUN useradd -m -U minecraft && \
 	mkdir -p /minecraft/world && \
-	wget --no-check-certificate https://www.feed-the-beast.com/projects/ftb-revelation/files/2584443/download -O FTBRevelation-2.3.0-1.12.2.zip && \
+	wget --no-check-certificate https://www.feed-the-beast.com/projects/ftb-revelation/files/2610841/download -O FTBRevelation-2.3.0-1.12.2.zip && \
 	unzip FTBRevelation-2.3.0-1.12.2.zip && \
 	rm FTBRevelation-2.3.0-1.12.2.zip && \
-	wget --no-check-certificate https://www.feed-the-beast.com/projects/ftb-revelation/files/2584447/download -O FTBRevelationServer_2.3.0.zip && \
+	wget --no-check-certificate https://www.feed-the-beast.com/projects/ftb-revelation/files/2610843/download -O FTBRevelationServer_2.3.0.zip && \
 	unzip FTBRevelationServer_2.3.0.zip && \
 	rm FTBRevelationServer_2.3.0.zip && \
 	chmod u+x FTBInstall.sh ServerStart.sh && \
